@@ -100,9 +100,9 @@ nav ul a:hover::after, nav ul a.current::after{width:100%;}
 .choc-hero{position:relative; overflow:hidden;}
 .choc-hero .bg-accent{
   position:absolute; top:-10%; right:-6%; width:440px; max-width:44vw;
-  opacity:.16; z-index:0; pointer-events:none; filter:saturate(1.05);
-  -webkit-mask-image:radial-gradient(circle at 60% 40%, #000 55%, transparent 78%);
-  mask-image:radial-gradient(circle at 60% 40%, #000 55%, transparent 78%);
+  opacity:.42; z-index:0; pointer-events:none; filter:saturate(1.15);
+  -webkit-mask-image:radial-gradient(circle at 60% 40%, #000 62%, transparent 85%);
+  mask-image:radial-gradient(circle at 60% 40%, #000 62%, transparent 85%);
 }
 .choc-hero .wrap{position:relative; z-index:1;}
 
@@ -116,7 +116,7 @@ nav ul a:hover::after, nav ul a.current::after{width:100%;}
 .choc-band{
   position:relative; padding:64px 0; text-align:center; overflow:hidden;
   background:
-    linear-gradient(rgba(250,247,241,.93), rgba(250,247,241,.93)),
+    linear-gradient(rgba(250,247,241,.68), rgba(250,247,241,.68)),
     url('images/chocolates-kay-allenbaugh.jpg');
   background-size: 340px, 340px;
   background-position:center; background-repeat:repeat;
