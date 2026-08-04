@@ -191,7 +191,7 @@ nav ul a:hover::after, nav ul a.current::after{width:100%;}
 .about{
   display:grid; grid-template-columns:.8fr 1.2fr; gap:64px; align-items:center;
 }
-.about img{width:100%; border-radius:2px;}
+.about img{width:144px; max-width:100%; border-radius:2px;}
 .about blockquote{
   font-family:var(--serif); font-style:italic; font-size:25px; line-height:1.5; color:var(--sage-dark);
   margin:0 0 22px; border-left:3px solid var(--terracotta); padding-left:22px;
