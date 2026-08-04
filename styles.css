@@ -134,8 +134,8 @@ nav ul a:hover::after, nav ul a.current::after{width:100%;}
 
 /* Generic prose (about / chocolate-series pages) */
 .prose p{font-size:17px; line-height:1.75; color:#3f3b32; font-weight:400; margin:0 0 20px;}
-.prose a{color:var(--sage-dark); text-decoration:underline;}
-.prose a:hover{color:var(--terracotta);}
+.prose a:not(.btn){color:var(--sage-dark); text-decoration:underline;}
+.prose a:not(.btn):hover{color:var(--terracotta);}
 
 /* GALLERY */
 .filters{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:44px;}
