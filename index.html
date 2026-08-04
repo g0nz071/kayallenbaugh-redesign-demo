@@ -5,234 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kay Allenbaugh — Watercolor Artist &amp; Author (Redesign Mockup)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#2b2b26;
-    --paper:#faf7f1;
-    --paper-dim:#f1ece1;
-    --sage:#5b6b52;
-    --sage-dark:#3e4a38;
-    --terracotta:#b5603f;
-    --line:#e2dccb;
-    --serif:'Cormorant Garamond', Georgia, serif;
-    --sans:'Jost', 'Helvetica Neue', Arial, sans-serif;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:var(--sans); font-weight:300; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
-
-  .demo-flag{
-    background:var(--sage-dark); color:#f3efe4; text-align:center;
-    font-family:var(--sans); font-size:13px; letter-spacing:.04em;
-    padding:9px 16px;
-  }
-  .demo-flag b{color:#fff;}
-
-  /* NAV */
-  header.site{
-    position:sticky; top:0; z-index:50; background:rgba(250,247,241,.92);
-    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:18px; padding-bottom:18px;
-  }
-  .brand{
-    font-family:var(--serif); font-size:26px; letter-spacing:.02em; font-weight:600;
-    text-decoration:none; color:var(--ink);
-  }
-  .brand span{display:block; font-family:var(--sans); font-size:10.5px; letter-spacing:.24em;
-    text-transform:uppercase; color:var(--sage); font-weight:500; margin-top:1px;}
-  nav ul{list-style:none; display:flex; gap:34px; margin:0; padding:0;}
-  nav ul a{
-    text-decoration:none; font-size:13.5px; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--ink); font-weight:500; position:relative; padding-bottom:4px;
-  }
-  nav ul a::after{
-    content:""; position:absolute; left:0; bottom:0; width:0; height:1px;
-    background:var(--terracotta); transition:width .25s ease;
-  }
-  nav ul a:hover::after{width:100%;}
-  .navToggle{display:none; background:none; border:0; font-size:22px; cursor:pointer; color:var(--ink);}
-
-  /* HERO */
-  .hero{
-    display:grid; grid-template-columns:1.05fr .95fr; align-items:stretch; min-height:640px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-copy{
-    display:flex; flex-direction:column; justify-content:center; gap:22px;
-    padding:80px 64px; background:var(--paper);
-  }
-  .hero-eyebrow{
-    font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--terracotta); font-weight:500;
-  }
-  .hero-copy h1{
-    font-family:var(--serif); font-size:clamp(38px,5vw,60px); line-height:1.06; margin:0;
-    font-weight:600; color:var(--ink);
-  }
-  .hero-copy p{
-    font-size:17px; color:#4b473e; max-width:440px; margin:0; font-weight:300;
-  }
-  .hero-ctas{display:flex; gap:16px; margin-top:8px; flex-wrap:wrap;}
-  .btn{
-    display:inline-block; padding:13px 28px; font-size:12.5px; letter-spacing:.14em;
-    text-transform:uppercase; text-decoration:none; font-weight:500; border-radius:1px;
-    transition:all .2s ease; cursor:pointer; border:1px solid transparent;
-  }
-  .btn-primary{background:var(--sage-dark); color:#fff;}
-  .btn-primary:hover{background:var(--terracotta);}
-  .btn-ghost{border-color:var(--ink); color:var(--ink); background:transparent;}
-  .btn-ghost:hover{border-color:var(--terracotta); color:var(--terracotta);}
-
-  .hero-image{position:relative; overflow:hidden; background:#e9e3d3;}
-  .hero-image img{width:100%; height:100%; object-fit:cover; min-height:340px;}
-  .hero-image .cap{
-    position:absolute; left:20px; bottom:20px; background:rgba(43,43,38,.72); color:#f3efe4;
-    padding:8px 14px; font-family:var(--serif); font-style:italic; font-size:15px; letter-spacing:.02em;
-  }
-
-  /* SECTION HEADS */
-  .section{padding:96px 0;}
-  .section.tight{padding:72px 0;}
-  .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
-  .section-head .eyebrow{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--terracotta); font-weight:500; margin-bottom:10px;}
-  .section-head h2{font-family:var(--serif); font-size:40px; font-weight:600; margin:0 0 14px;}
-  .section-head p{color:#5a564a; font-size:16px; margin:0;}
-  .alt{background:var(--paper-dim);}
-
-  /* GALLERY */
-  .filters{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:44px;}
-  .filters button{
-    background:transparent; border:1px solid var(--line); color:var(--ink);
-    font-family:var(--sans); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
-    padding:9px 18px; cursor:pointer; transition:.2s;
-  }
-  .filters button.active, .filters button:hover{background:var(--sage-dark); color:#fff; border-color:var(--sage-dark);}
-
-  .grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:26px;
-  }
-  .card{
-    position:relative; overflow:hidden; cursor:pointer; background:#e9e3d3;
-    aspect-ratio:4/5; border:1px solid var(--line);
-  }
-  .card img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
-  .card:hover img{transform:scale(1.06);}
-  .card .overlay{
-    position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,20,16,.82) 0%, rgba(20,20,16,0) 55%);
-    opacity:0; transition:opacity .3s ease; display:flex; align-items:flex-end; padding:18px;
-  }
-  .card:hover .overlay{opacity:1;}
-  .card .overlay .t{color:#fff;}
-  .card .overlay .t .name{font-family:var(--serif); font-size:20px; font-style:italic; display:block;}
-  .card .overlay .t .meta{font-size:11.5px; letter-spacing:.05em; color:#e6e1d3; text-transform:uppercase; margin-top:3px; display:block;}
-
-  .gallery-more{text-align:center; margin-top:48px;}
-
-  /* AUTHOR SECTION */
-  .author{
-    display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:center;
-  }
-  .author-stats{display:flex; gap:36px; margin:30px 0; flex-wrap:wrap;}
-  .stat{}
-  .stat .num{font-family:var(--serif); font-size:38px; font-weight:600; color:var(--sage-dark); line-height:1;}
-  .stat .lbl{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#6b6858; margin-top:4px;}
-  .books-strip{display:flex; gap:16px; overflow-x:auto; padding-bottom:10px; margin-top:8px;}
-  .books-strip img{
-    height:190px; width:auto; flex:0 0 auto; box-shadow:0 10px 24px -8px rgba(0,0,0,.35); border:1px solid rgba(0,0,0,.06);
-  }
-
-  /* ABOUT */
-  .about{
-    display:grid; grid-template-columns:.8fr 1.2fr; gap:64px; align-items:center;
-  }
-  .about img{width:100%; border-radius:2px;}
-  .about blockquote{
-    font-family:var(--serif); font-style:italic; font-size:24px; line-height:1.5; color:var(--sage-dark);
-    margin:0 0 22px; border-left:3px solid var(--terracotta); padding-left:22px;
-  }
-  .about-list{display:flex; gap:40px; margin-top:28px; flex-wrap:wrap;}
-  .about-list h4{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--terracotta); margin:0 0 10px;}
-  .about-list ul{margin:0; padding-left:18px; font-size:14.5px; color:#4b473e;}
-  .about-list li{margin-bottom:5px;}
-
-  /* CONTACT */
-  .contact-wrap{
-    display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start;
-  }
-  .contact-info p{font-size:15px; color:#4b473e;}
-  .contact-info a.big{
-    display:block; font-family:var(--serif); font-size:22px; color:var(--sage-dark); text-decoration:none; margin:6px 0;
-  }
-  .contact-info a.big:hover{color:var(--terracotta);}
-  form{display:grid; gap:16px;}
-  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  input, textarea, select{
-    width:100%; border:1px solid var(--line); background:#fff; padding:13px 14px;
-    font-family:var(--sans); font-size:14px; color:var(--ink);
-  }
-  textarea{min-height:120px; resize:vertical;}
-  label{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#6b6858; display:block; margin-bottom:6px;}
-
-  footer{
-    background:var(--sage-dark); color:#e8e4d6; padding:44px 0 28px; font-size:13px;
-  }
-  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
-  footer a{text-decoration:none; color:#e8e4d6;}
-  footer .fbrand{font-family:var(--serif); font-size:20px; font-style:italic;}
-  .footer-note{opacity:.65; font-size:11.5px; margin-top:10px;}
-
-  /* LIGHTBOX */
-  .lightbox{
-    position:fixed; inset:0; background:rgba(20,18,14,.94); z-index:200;
-    display:none; align-items:center; justify-content:center; padding:40px;
-  }
-  .lightbox.open{display:flex;}
-  .lb-inner{
-    background:var(--paper); max-width:1000px; width:100%; max-height:90vh; overflow:auto;
-    display:grid; grid-template-columns:1.2fr 1fr;
-  }
-  .lb-inner img{width:100%; height:100%; object-fit:cover;}
-  .lb-info{padding:40px; display:flex; flex-direction:column; justify-content:center;}
-  .lb-info .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--terracotta);}
-  .lb-info h3{font-family:var(--serif); font-size:32px; margin:8px 0 14px; font-style:italic;}
-  .lb-info .dims{font-size:13.5px; color:#6b6858; margin-bottom:18px;}
-  .lb-info p.desc{font-size:14.5px; color:#4b473e; margin-bottom:26px;}
-  .lb-close{
-    position:absolute; top:26px; right:36px; background:none; border:0; color:#f3efe4;
-    font-size:30px; cursor:pointer; line-height:1;
-  }
-
-  @media (max-width:980px){
-    .hero{grid-template-columns:1fr;}
-    .hero-image{order:-1; min-height:320px;}
-    .hero-copy{padding:56px 28px;}
-    .grid{grid-template-columns:repeat(2,1fr);}
-    .author, .about, .contact-wrap{grid-template-columns:1fr;}
-    .about img{max-width:340px; margin:0 auto;}
-    nav ul{position:fixed; top:64px; left:0; right:0; background:var(--paper); flex-direction:column;
-      padding:20px 32px 30px; gap:18px; border-bottom:1px solid var(--line); display:none;}
-    nav ul.open{display:flex;}
-    .navToggle{display:block;}
-    .lb-inner{grid-template-columns:1fr;}
-  }
-  @media (max-width:600px){
-    .grid{grid-template-columns:repeat(2,1fr); gap:14px;}
-    .section{padding:64px 0;}
-    .wrap{padding:0 20px;}
-    .row2{grid-template-columns:1fr;}
-    .author-stats{gap:24px;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -240,12 +14,12 @@
 
 <header class="site">
   <nav class="wrap">
-    <a href="#top" class="brand">Kay Allenbaugh<span>Watercolor Artist &amp; Author</span></a>
+    <a href="index.html" class="brand">Kay Allenbaugh<span>Watercolor Artist &amp; Author</span></a>
     <button class="navToggle" id="navToggle" aria-label="Menu">&#9776;</button>
     <ul id="navList">
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#books">Chocolate Series</a></li>
-      <li><a href="#about">About Kay</a></li>
+      <li><a href="chocolate-series.html">Chocolate Series</a></li>
+      <li><a href="about.html">About Kay</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -258,7 +32,7 @@
     <p>I paint to bring beauty into the world that didn't exist before — loose, sunlit still lifes of the everyday things I love: orchards, gardens, and the boats along the Oregon coast. Originals and giclée prints available.</p>
     <div class="hero-ctas">
       <a href="#gallery" class="btn btn-primary">View the Gallery</a>
-      <a href="#about" class="btn btn-ghost">About Kay</a>
+      <a href="about.html" class="btn btn-ghost">About Kay</a>
     </div>
   </div>
   <div class="hero-image">
@@ -272,7 +46,7 @@
     <div class="section-head">
       <div class="eyebrow">Selected Works</div>
       <h2>The Gallery</h2>
-      <p>A curated selection of originals. Click any piece for details, size, and inquiry — every painting shown is one-of-a-kind, with giclée prints available on request.</p>
+      <p>A curated selection of originals. Click any piece to view it full-size, with details, dimensions, and inquiry — every painting shown is one-of-a-kind, with giclée prints available on request.</p>
     </div>
 
     <div class="filters" id="filters">
@@ -286,63 +60,6 @@
 
     <div class="gallery-more">
       <a href="#contact" class="btn btn-ghost">Inquire About a Piece</a>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="books">
-  <div class="wrap author">
-    <div>
-      <div class="hero-eyebrow">Also By Kay</div>
-      <h2 style="font-family:var(--serif); font-size:40px; font-weight:600; margin:10px 0 16px;">National Best-Selling Author</h2>
-      <p style="color:#4b473e; font-size:16px;">The <em>Chocolate for a Woman's Soul</em> series collects true, heartfelt stories from women across the country. Thirteen books. One of the best-loved inspirational series of its era.</p>
-      <div class="author-stats">
-        <div class="stat"><div class="num">3M+</div><div class="lbl">Copies Sold</div></div>
-        <div class="stat"><div class="num">18</div><div class="lbl">Languages</div></div>
-        <div class="stat"><div class="num">13</div><div class="lbl">Books</div></div>
-      </div>
-      <a href="http://www.amazon.com/s/ref=nb_ss?url=search-alias%3Daps&field-keywords=kay+allenbaugh" class="btn btn-primary" target="_blank" rel="noopener">Find the Books on Amazon</a>
-    </div>
-    <div>
-      <div class="books-strip">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/09_chocolate-for-a-womans-soul.jpg" alt="Chocolate for a Woman's Soul book cover">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/08_chocolate-for-a-womans-heart.jpg" alt="Chocolate for a Woman's Heart book cover">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/06_chocolate-for-a-lovers-heart.jpg" alt="Chocolate for a Lover's Heart book cover">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/07_chocolate-for-a-womans-spirit.jpg" alt="Chocolate for a Woman's Spirit book cover">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/04_chocolate-for-a-womans-blessing.jpg" alt="Chocolate for a Woman's Blessing book cover">
-        <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/03_chocolate-for-a-teen-soul.jpg" alt="Chocolate for a Teen Soul book cover">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="wrap about">
-    <img src="https://kayallenbaugh.com/wordpress/wp-content/uploads/2016/03/kay-allenbaugh-author-and-artist.jpg" alt="Portrait of Kay Allenbaugh">
-    <div>
-      <div class="hero-eyebrow">About Kay</div>
-      <blockquote>"While I paint, I focus on my mission to bring beauty into the world that did not exist before."</blockquote>
-      <p style="font-size:15.5px; color:#4b473e;">Kay lives in Lake Oswego, Oregon, with her husband Eric and their two dogs, Buddy and Lucy. Inspiration feeds her soul, whether from art or books — the same joy that drove her best-selling <em>Chocolate</em> series carries into every watercolor she paints today.</p>
-      <div class="about-list">
-        <div>
-          <h4>Galleries &amp; Shows</h4>
-          <ul>
-            <li>Lake Area Artists</li>
-            <li>Watercolor Society of Oregon</li>
-            <li>Painters Showcase</li>
-            <li>Seaside Art Walk, Seaside OR</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Associations</h4>
-          <ul>
-            <li>Lake Area Artists</li>
-            <li>Painters Showcase</li>
-            <li>Watercolor Society of Oregon</li>
-            <li>Friday Critique Group</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -379,7 +96,7 @@
       <div class="footer-note">Redesign mockup prepared for review · original site &copy; Kay Allenbaugh</div>
     </div>
     <div>
-      <a href="#gallery">Gallery</a> &nbsp;·&nbsp; <a href="#books">Books</a> &nbsp;·&nbsp; <a href="#about">About</a> &nbsp;·&nbsp; <a href="#contact">Contact</a>
+      <a href="#gallery">Gallery</a> &nbsp;·&nbsp; <a href="chocolate-series.html">Chocolate Series</a> &nbsp;·&nbsp; <a href="about.html">About Kay</a> &nbsp;·&nbsp; <a href="#contact">Contact</a>
     </div>
   </div>
 </footer>
@@ -387,11 +104,14 @@
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lbClose">&times;</button>
   <div class="lb-inner">
-    <img id="lbImg" src="" alt="">
+    <div class="lb-image">
+      <img id="lbImg" src="" alt="">
+    </div>
     <div class="lb-info">
       <div class="eyebrow" id="lbCat"></div>
       <h3 id="lbTitle"></h3>
       <div class="dims" id="lbDims"></div>
+      <div class="fullres"><a id="lbFullres" href="#" target="_blank" rel="noopener">Open full-resolution image ↗</a></div>
       <p class="desc" id="lbDesc"></p>
       <a href="#contact" class="btn btn-primary" id="lbInquire">Inquire About This Piece</a>
     </div>
@@ -450,6 +170,7 @@ function openLightbox(i){
   document.getElementById('lbImg').alt = w.title;
   document.getElementById('lbTitle').textContent = '"' + w.title + '"';
   document.getElementById('lbDims').textContent = w.dims + ' · Original & giclée prints available';
+  document.getElementById('lbFullres').href = w.img;
   document.getElementById('lbDesc').textContent = w.desc;
   document.getElementById('lbCat').textContent = w.cat === 'fruit' ? 'Fruit & Still Life' : (w.cat === 'coastal' ? 'Coastal & Boats' : 'Florals');
   lb.classList.add('open');
