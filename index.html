@@ -46,7 +46,7 @@
     <div class="section-head">
       <div class="eyebrow">Selected Works</div>
       <h2>The Gallery</h2>
-      <p>A curated selection of originals. Click any piece to view it full-size, with details, dimensions, and inquiry — every painting shown is one-of-a-kind, with giclée prints available on request.</p>
+      <p>A curated selection of originals. Click any piece to view it full-size, with details and inquiry.</p>
     </div>
 
     <div class="filters" id="filters">
@@ -110,7 +110,6 @@
     <div class="lb-info">
       <div class="eyebrow" id="lbCat"></div>
       <h3 id="lbTitle"></h3>
-      <div class="dims" id="lbDims"></div>
       <div class="fullres"><a id="lbFullres" href="#" target="_blank" rel="noopener">Open full-resolution image ↗</a></div>
       <p class="desc" id="lbDesc"></p>
       <a href="#contact" class="btn btn-primary" id="lbInquire">Inquire About This Piece</a>
@@ -147,7 +146,7 @@ works.forEach((w, i) => {
   card.dataset.cat = w.cat;
   card.innerHTML = `
     <img src="${w.img}" alt="${w.title}, watercolor painting by Kay Allenbaugh" loading="lazy">
-    <div class="overlay"><div class="t"><span class="name">${w.title}</span><span class="meta">${w.dims}</span></div></div>
+    <div class="overlay"><div class="t"><span class="name">${w.title}</span></div></div>
   `;
   card.addEventListener('click', () => openLightbox(i));
   grid.appendChild(card);
@@ -169,7 +168,6 @@ function openLightbox(i){
   document.getElementById('lbImg').src = w.img;
   document.getElementById('lbImg').alt = w.title;
   document.getElementById('lbTitle').textContent = '"' + w.title + '"';
-  document.getElementById('lbDims').textContent = w.dims + ' · Original & giclée prints available';
   document.getElementById('lbFullres').href = w.img;
   document.getElementById('lbDesc').textContent = w.desc;
   document.getElementById('lbCat').textContent = w.cat === 'fruit' ? 'Fruit & Still Life' : (w.cat === 'coastal' ? 'Coastal & Boats' : 'Florals');
