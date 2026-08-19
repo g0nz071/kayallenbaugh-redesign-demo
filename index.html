@@ -108,11 +108,8 @@
       <img id="lbImg" src="" alt="">
     </div>
     <div class="lb-info">
-      <div class="eyebrow" id="lbCat"></div>
       <h3 id="lbTitle"></h3>
       <div class="fullres"><a id="lbFullres" href="#" target="_blank" rel="noopener">Open full-resolution image ↗</a></div>
-      <p class="desc" id="lbDesc"></p>
-      <a href="#contact" class="btn btn-primary" id="lbInquire">Inquire About This Piece</a>
     </div>
   </div>
 </div>
@@ -169,8 +166,6 @@ function openLightbox(i){
   document.getElementById('lbImg').alt = w.title;
   document.getElementById('lbTitle').textContent = '"' + w.title + '"';
   document.getElementById('lbFullres').href = w.img;
-  document.getElementById('lbDesc').textContent = w.desc;
-  document.getElementById('lbCat').textContent = w.cat === 'fruit' ? 'Fruit & Still Life' : (w.cat === 'coastal' ? 'Coastal & Boats' : 'Florals');
   lb.classList.add('open');
 }
 document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
