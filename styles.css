@@ -236,17 +236,18 @@ footer .fbrand{font-family:var(--serif); font-size:20px; font-style:italic;}
 }
 .lightbox.open{display:flex;}
 .lb-inner{
-  background:var(--paper); max-width:1320px; width:100%; max-height:94vh;
-  display:grid; grid-template-columns:1.5fr 1fr; overflow:hidden;
+  background:var(--paper); max-width:920px; width:100%; max-height:82vh;
+  display:grid; grid-template-columns:1.3fr 1fr; overflow:hidden;
+  border-radius:6px; box-shadow:0 40px 90px -20px rgba(0,0,0,.55);
 }
 .lb-image{
   background:#100f0c; display:flex; align-items:center; justify-content:center;
-  max-height:94vh; overflow:hidden;
+  max-height:82vh; overflow:hidden;
 }
 .lb-image img{
-  width:auto; height:auto; max-width:100%; max-height:94vh; object-fit:contain; margin:0 auto;
+  width:auto; height:auto; max-width:100%; max-height:82vh; object-fit:contain; margin:0 auto;
 }
-.lb-info{padding:40px; display:flex; flex-direction:column; justify-content:center; overflow-y:auto; max-height:94vh;}
+.lb-info{padding:32px; display:flex; flex-direction:column; justify-content:center; overflow-y:auto; max-height:82vh;}
 .lb-info .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--terracotta);}
 .lb-info h3{font-family:var(--serif); font-size:32px; margin:8px 0 14px; font-style:italic;}
 .lb-info .dims{font-size:14px; color:#6b6858; margin-bottom:8px;}
