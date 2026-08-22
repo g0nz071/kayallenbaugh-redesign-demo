@@ -50,9 +50,9 @@
 
     <div class="filters" id="filters">
       <button class="active" data-filter="all">All Work</button>
-      <button data-filter="florals">Florals</button>
-      <button data-filter="fruit">Fruit &amp; Still Life</button>
-      <button data-filter="coastal">Coastal &amp; Boats</button>
+      <button data-filter="florals">Florals &amp; Still Lifes</button>
+      <button data-filter="fruit">Botanicals &amp; Nature</button>
+      <button data-filter="coastal">Coastal &amp; Sun</button>
     </div>
 
     <div class="grid" id="grid"></div>
@@ -70,7 +70,6 @@
       <h2 style="font-family:var(--serif); font-size:36px; font-weight:600; margin:10px 0 16px;">Inquire About a Painting</h2>
       <p>Reach out with a piece in mind, or ask about current availability.</p>
       <a class="big" href="tel:5034816933">503-481-6933</a>
-      <a class="big" href="mailto:Kay@Allenbaugh.com">Kay@Allenbaugh.com</a>
       <p style="margin-top:26px; font-size:13px; color:#8a8677;">Form below is a design mockup only and does not send.</p>
     </div>
     <form onsubmit="return false;">
@@ -92,7 +91,7 @@
   <div class="wrap">
     <div>
       <div class="fbrand">Kay Allenbaugh</div>
-      <div class="footer-note">&copy; Kay Allenbaugh</div>
+      <div class="footer-note">&copy; 2013-2026 Kay Allenbaugh. All Rights Reserved &nbsp;|&nbsp; Site by <a href="https://www.designwiseart.com" target="_blank" rel="noopener">DesignWise Art</a></div>
     </div>
     <div>
       <a href="#gallery">Gallery</a> &nbsp;·&nbsp; <a href="chocolate-series.html">Chocolate Series</a> &nbsp;·&nbsp; <a href="about.html">About Kay</a> &nbsp;·&nbsp; <a href="#contact">Contact</a>
@@ -121,7 +120,7 @@ const works = [
   {title:"Blue and Yellow Surprise", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Kay-Allenbaugh_Blue-and-Yellow-Surprise_897-x-556.jpg", desc:"An unexpected pairing of cool blues and warm yellows in full bloom."},
   {title:"Dream Boat", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Kay-Allenbaugh_Dream-Boats_897-x-556.jpg", desc:"A quiet homage to the small wooden boats along the Oregon coast."},
   {title:"Mr. Big", cat:"coastal", dims:'Watercolor · 37" × 30"', img:"images/red-white-boat-by-kay-allenbaugh-1.jpg", desc:"One of Kay's largest works — a bold red-and-white boat rendered at scale."},
-  {title:"Memories", cat:"florals", dims:'Watercolor · 20" × 18.5"', img:"images/watercolor-painting-by-kay-allenbaugh2.jpg", desc:"A tender, nostalgic floral study."},
+  {title:"Memories", cat:"coastal", dims:'Watercolor · 20" × 18.5"', img:"images/watercolor-painting-by-kay-allenbaugh2.jpg", desc:"A tender, nostalgic floral study."},
   {title:"White Lilies on Red", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/White-Lilies-on-Red-Kay-Allenbaugh.jpg", desc:"High-contrast lilies set against a bold red field."},
   {title:"Flower Drama", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Flower-Drama-Kay-Allenbaugh.jpg", desc:"Hydrangeas painted with dramatic depth and shadow."},
   {title:"Apples Galore", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Kay-Allenbaugh_Apples-Galore.jpg", desc:"A generous basket of orchard apples in warm autumn tones."},
@@ -129,10 +128,10 @@ const works = [
   {title:"Sweet Oranges", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Sweet-Oranges.jpg", desc:"A tightly composed citrus still life."},
   {title:"Sunflower Breeze", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Sunflower-Breeze.jpg", desc:"Sunflowers caught mid-sway, loose and breezy."},
   {title:"Tulip Profusion", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Tulip-Profusion.jpg", desc:"A dense, joyful field of tulips in every color."},
-  {title:"Sunset", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Sunset-jpg.jpg", desc:"Warm coastal light fading over the water."},
+  {title:"Sunset", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Sunset-jpg.jpg", desc:"Warm coastal light fading over the water."},
   {title:"Hat Show", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Hat-Show.jpg", desc:"A playful, character-filled study."},
   {title:"Peony", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Peony.jpg", desc:"A single peony bloom rendered in soft, layered petals."},
-  {title:"Star Gazing", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Star-Gazing.jpg", desc:"A dreamy evening scene along the water."},
+  {title:"Star Gazing", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Star-Gazing.jpg", desc:"A dreamy evening scene along the water."},
   {title:"Summer to Fall", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Summer-to-Fall-jpg.jpg", desc:"A garden caught in the turn between two seasons."},
   {title:"Red Lily", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Red-Lily-jpg.jpg", desc:"A single red lily rendered in bold, saturated color."},
   {title:"Pop of Color", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Pop-of-Color-jpg.jpg", desc:"A burst of unexpected color against a quiet background."},
@@ -149,20 +148,20 @@ const works = [
   {title:"Retreat", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Retreat.jpg", desc:"A peaceful coastal retreat, softly rendered."},
   {title:"An Apple a Day", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/an_apple_a_day.jpg", desc:"A simple, homey study of orchard apples."},
   {title:"Basket Bonanza", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Basket-Bonanza-jpg.jpg", desc:"A basket overflowing with orchard fruit."},
-  {title:"Peppy Peppers", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Peppy-Peppers.jpg", desc:"Bright peppers rendered with playful energy."},
+  {title:"Peppy Peppers", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Peppy-Peppers.jpg", desc:"Bright peppers rendered with playful energy."},
   {title:"Singing Tulips", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Singing-Tulips-jpg.jpg", desc:"Tulips painted with movement and song."},
-  {title:"Heavy Metal", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Heavy_Metal.jpg", desc:"A bold, weighty study of metal and light."},
+  {title:"Heavy Metal", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Heavy_Metal.jpg", desc:"A bold, weighty study of metal and light."},
   {title:"Missy's Tulips", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Missys_Tulips.jpg", desc:"Tulips painted for a friend, soft and personal."},
   {title:"Wild Tulips", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Wild-Tulips-Kay-Allenbaugh-jpg.jpg", desc:"Tulips gone a little wild, loose and free."},
   {title:"Garden Club Ready", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Garden-Club-Ready.jpg", desc:"A garden arrangement ready for showing."},
   {title:"Hazel the Heifer", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Hazel-the-Heifer.jpg", desc:"A charming, character-filled farm study."},
   {title:"Raku-ish", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Raku-ish.jpg", desc:"A still life inspired by raku pottery."},
-  {title:"Beach Bouquet", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Beach-Bouquet.jpg", desc:"A bouquet gathered from a beach garden."},
+  {title:"Beach Bouquet", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Beach-Bouquet.jpg", desc:"A bouquet gathered from a beach garden."},
   {title:"Apple Blossoms", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Apple-Blossoms.jpg", desc:"Delicate apple blossoms in soft spring light."},
   {title:"Fall Harvest", cat:"fruit", dims:'Watercolor · 22" × 25"', img:"images/Fall-Harvest.jpg", desc:"The colors of a bountiful fall harvest."},
   {title:"Golden Glory", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Golden-Glory-JPG.jpg", desc:"Autumn gold rendered in loose, warm washes."},
   {title:"Happy Tulips", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/From-the-Country-Store.jpg", desc:"Another cheerful field of tulips, loose and bright."},
-  {title:"Hat Show Two", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Hat-Show-Two.jpg", desc:"A second look at a favorite millinery study."},
+  {title:"Hat Show Two", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Hat-Show-Two.jpg", desc:"A second look at a favorite millinery study."},
   {title:"Cruising", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Cruising.jpg", desc:"A boat cruising along calm coastal waters."},
   {title:"Early Summer", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Early-Summer.jpg", desc:"The first warm days of early summer."},
   {title:"Grandma's Garden", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Grandmas-Garden.jpg", desc:"A nostalgic tribute to a grandmother's garden."},
@@ -170,7 +169,7 @@ const works = [
   {title:"Lily Burst", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Lily-Burst.jpg", desc:"Lilies bursting into bloom."},
   {title:"Whatever Floats Your Boat", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Whatever-Floats-Your-Boat.jpg", desc:"A playful coastal scene, light and breezy."},
   {title:"Seaworthy", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Seaworthy.jpg", desc:"A sturdy little boat, ready for the water."},
-  {title:"Red Lady", cat:"florals", dims:'Watercolor · 22" × 25"', img:"images/Red-Lady-jpg.jpg", desc:"A bold red floral study."}
+  {title:"Red Lady", cat:"coastal", dims:'Watercolor · 22" × 25"', img:"images/Red-Lady-jpg.jpg", desc:"A bold red floral study."}
 ];
 
 const grid = document.getElementById('grid');
