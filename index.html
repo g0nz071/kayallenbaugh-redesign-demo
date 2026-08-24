@@ -70,20 +70,24 @@
       <h2 style="font-family:var(--serif); font-size:36px; font-weight:600; margin:10px 0 16px;">Inquire About a Painting</h2>
       <p>Reach out with a piece in mind, or ask about current availability.</p>
       <a class="big" href="tel:5034816933">503-481-6933</a>
-      <p style="margin-top:26px; font-size:13px; color:#8a8677;">Form below is a design mockup only and does not send.</p>
     </div>
-    <form onsubmit="return false;">
+    <form id="contactForm">
       <div class="row2">
-        <div><label>First Name</label><input type="text" placeholder="Jane"></div>
-        <div><label>Last Name</label><input type="text" placeholder="Doe"></div>
+        <div><label>First Name</label><input type="text" name="first" placeholder="Jane"></div>
+        <div><label>Last Name</label><input type="text" name="last" placeholder="Doe"></div>
       </div>
-      <div><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+      <div><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
       <div><label>Interested In</label>
-        <select><option>General inquiry</option><option>A specific painting</option><option>Chocolate Series books</option><option>Commission a piece</option></select>
+        <select name="interest"><option>General inquiry</option><option>A specific painting</option><option>Chocolate Series books</option><option>Commission a piece</option></select>
       </div>
-      <div><label>Message</label><textarea placeholder="Tell Kay what you're looking for..."></textarea></div>
+      <div><label>Message</label><textarea name="message" placeholder="Tell Kay what you're looking for..."></textarea></div>
       <button type="submit" class="btn btn-primary" style="justify-self:start;">Send Message</button>
+      <p id="formError" style="display:none; color:#b3402a; font-size:13px; margin-top:10px;"></p>
     </form>
+    <div id="formSuccess" style="display:none; text-align:center; padding:40px 20px;">
+      <h3 style="font-family:var(--serif); font-size:28px; font-weight:600; margin-bottom:10px;">Thank you!</h3>
+      <p>Your message has been sent. Kay will be in touch soon.</p>
+    </div>
   </div>
 </section>
 
@@ -214,6 +218,36 @@ document.getElementById('navToggle').addEventListener('click', () => {
 document.querySelectorAll('#navList a').forEach(a => a.addEventListener('click', () => {
   document.getElementById('navList').classList.remove('open');
 }));
+
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = contactForm.querySelector('button[type="submit"]');
+  const errorEl = document.getElementById('formError');
+  errorEl.style.display = 'none';
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  fetch('contact.php', { method: 'POST', body: new FormData(contactForm) })
+    .then(r => r.json())
+    .then(res => {
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        errorEl.textContent = res.error || 'Something went wrong. Please try again or call 503-481-6933.';
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    })
+    .catch(() => {
+      errorEl.textContent = 'Something went wrong. Please try again or call 503-481-6933.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = originalText;
+    });
+});
 </script>
 
 </body>
